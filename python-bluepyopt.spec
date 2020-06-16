@@ -35,6 +35,7 @@ Requires:       python3dist(numpy) >= 1.6
 Requires:       python3dist(pandas) >= 0.18
 Requires:       python3dist(pickleshare) >= 0.7.3
 Requires:       python3dist(setuptools)
+Requires:       python3dist(pebble) >= 4.3.10
 %description -n python3-%{pypi_name}
 The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible
 framework for data-driven model parameter optimisation that wraps and

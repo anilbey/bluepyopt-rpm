@@ -25,6 +25,7 @@ tasks into various reusable...
 Summary:        %{summary}
 %{?python_provide:%python_provide python3-%{pypi_name}}
  
+Requires:       python3-neuron
 Requires:       python3dist(deap)
 Requires:       python3dist(efel) >= 2.13
 Requires:       python3dist(future)

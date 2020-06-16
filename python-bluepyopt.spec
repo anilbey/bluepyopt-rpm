@@ -1,7 +1,7 @@
 %global pypi_name bluepyopt
 
 Name:           python-%{pypi_name}
-Version:        1.8.38
+Version:        1.9.48
 Release:        1%{?dist}
 Summary:        Bluebrain Python Optimisation Library (bluepyopt)
 

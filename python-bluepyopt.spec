@@ -10,6 +10,7 @@ URL:            https://github.com/BlueBrain/BluePyOpt
 Source0:        https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
  
+BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
 
 %description

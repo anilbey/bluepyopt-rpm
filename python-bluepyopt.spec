@@ -1,67 +1,48 @@
 %global pypi_name bluepyopt
+%define version 1.9.48
+%define release 1
 
-Name:           python-%{pypi_name}
-Version:        1.9.48
-Release:        1%{?dist}
-Summary:        Bluebrain Python Optimisation Library (bluepyopt)
-
-License:        LGPLv3
-URL:            https://github.com/BlueBrain/BluePyOpt
-Source0:        https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-BuildArch:      noarch
- 
-BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
 
+Summary: Bluebrain Python Optimisation Library (bluepyopt)
+Name: python-%{pypi_name}
+Version: %{version}
+Release: %{release}%{?dist}
+Source0: https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+License: LGPLv3
+Group: Development/Libraries
+BuildRoot: %{_tmppath}/%{pypi_name}-%{version}-%{release}-buildroot
+Prefix: %{_prefix}
+BuildArch: noarch
+Vendor: BlueBrain Project, EPFL <werner.vangeit@epfl.ch>
+Url: https://github.com/BlueBrain/BluePyOpt
+
+Requires: python3-neuron
+Requires: python3dist(deap)
+Requires: python3dist(efel) >= 2.13
+Requires: python3dist(future)
+Requires: python3dist(ipyparallel)
+Requires: python3dist(jinja2) >= 2.8
+Requires: python3dist(numpy) >= 1.6
+Requires: python3dist(pandas) >= 0.18
+Requires: python3dist(pickleshare) >= 0.7.3
+Requires: python3dist(setuptools)
+Requires: python3dist(pebble) >= 4.3.10
+
 %description
-The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible
-framework for data-driven model parameter optimisation that wraps and
-standardises several existing open-source tools. It simplifies the task of
-creating and sharing these optimisations, and the associated techniques and
-knowledge. This is achieved by abstracting the optimisation and evaluation
-tasks into various reusable...
-
-%package -n     python3-%{pypi_name}
-Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{pypi_name}}
- 
-Requires:       python3-neuron
-Requires:       python3dist(deap)
-Requires:       python3dist(efel) >= 2.13
-Requires:       python3dist(future)
-Requires:       python3dist(ipyparallel)
-Requires:       python3dist(jinja2) >= 2.8
-Requires:       python3dist(numpy) >= 1.6
-Requires:       python3dist(pandas) >= 0.18
-Requires:       python3dist(pickleshare) >= 0.7.3
-Requires:       python3dist(setuptools)
-Requires:       python3dist(pebble) >= 4.3.10
-%description -n python3-%{pypi_name}
-The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible
-framework for data-driven model parameter optimisation that wraps and
-standardises several existing open-source tools. It simplifies the task of
-creating and sharing these optimisations, and the associated techniques and
-knowledge. This is achieved by abstracting the optimisation and evaluation
-tasks into various reusable...
-
+The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framework for data-driven model parameter optimisation that wraps and standardises several existing open-source tools. It simplifies the task of creating and sharing these optimisations, and the associated techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks into various reusable and flexible discrete elements according to established best-practices.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
+%setup -n %{pypi_name}-%{version} -n %{pypi_name}-%{version}
 
 %build
-%py3_build
+python3 setup.py build
 
 %install
-%py3_install
+python3 setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
-%files -n python3-%{pypi_name}
-%doc README.md
-%{_bindir}/bpopt_tasksdb
-%{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%clean
+rm -rf $RPM_BUILD_ROOT
 
-%changelog
-* Sun Jul 07 2019 Luis M. Segundo <blackfile@fedoraproject.org> - 1.8.38-1
-- Initial package.
+%files -f INSTALLED_FILES
+%defattr(-,root,root)

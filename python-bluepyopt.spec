@@ -57,7 +57,7 @@ sed -i '/scoop/ d' setup.py
 
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
-/usr/bin/bpopt_tasksdb
+%{_bindir}/bpopt_tasksdb
 
 %changelog
 * 17 June 2020 Anil Tuncel <tuncel.manil@gmail.com>

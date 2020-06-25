@@ -1,14 +1,15 @@
 %global pypi_name bluepyopt
 
-Summary: Bluebrain Python Optimisation Library (bluepyopt)
 Name: python-%{pypi_name}
 Version: 1.9.48
 Release: 1%{?dist}
-Source0: %{pypi_source}
+Summary: Bluebrain Python Optimisation Library (bluepyopt)
+
 License: LGPLv3
-BuildRoot: %{_tmppath}/%{pypi_name}-%{version}-%{release}-buildroot
+URL: https://github.com/BlueBrain/BluePyOpt
+Source0: %{pypi_source}
+
 BuildArch: noarch
-Url: https://github.com/BlueBrain/BluePyOpt
 
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)

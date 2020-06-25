@@ -36,6 +36,9 @@ Summary:        %{summary}
 
 %prep
 %autosetup -n %{pypi_name}-%{version}
+# Optional dependency, remove so that automatic dep generator does not pick it up
+sed -i '/scoop/ d' setup.py
+
 
 %build
 %py3_build

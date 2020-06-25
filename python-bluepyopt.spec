@@ -29,6 +29,11 @@ established best-practices.}
 
 %description %_description
 
+%package -n python3-%{pypi_name}
+Summary:        %{summary}
+
+%description -n python3-%{pypi_name} %_description
+
 %prep
 %autosetup -n %{pypi_name}-%{version}
 
@@ -43,7 +48,7 @@ established best-practices.}
 %{__python3} setup.py test
 %endif
 
-%files -n python-%{pypi_name}
+%files -n python3-%{pypi_name}
 %license LICENSE.txt LGPL.txt
 %doc README.md
 

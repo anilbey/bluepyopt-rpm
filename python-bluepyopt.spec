@@ -57,7 +57,7 @@ sed -i '/scoop/ d' setup.py
 
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
-%{_bindir}/bpopt_tasksdb
+%{_bindir}bpopt_tasksdb
 
 %changelog
 * 17 June 2020 Anil Tuncel <tuncel.manil@gmail.com>
@@ -70,5 +70,3 @@ sed -i '/scoop/ d' setup.py
 - use autosetup, py3_build, py3_install
 - use pypi_source macro
 - removed deprecated release, vengor and group tags
-
-%defattr(-,root,root)

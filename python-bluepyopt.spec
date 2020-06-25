@@ -50,4 +50,16 @@ The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framewor
 %{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
 /usr/bin/bpopt_tasksdb
 
+%changelog
+* 17 June 2020 Anil Tuncel <tuncel.manil@gmail.com>
+- Initial package generated using python setup.py bdist --formats=rpm
+* 25 June 2020 Anil Tuncel <tuncel.manil@gmail.com>
+- Removed INSTALLED_FILES method
+- Updated file checks
+- Added check to run tests
+- Removed the %clean tag
+- use autosetup, py3_build, py3_install
+- use pypi_source macro
+- removed deprecated release, vengor and group tags
+
 %defattr(-,root,root)

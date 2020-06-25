@@ -1,3 +1,6 @@
+# Tests enabled by default
+%bcond_without tests
+
 %global pypi_name bluepyopt
 
 Name: python-%{pypi_name}

@@ -35,6 +35,9 @@ established best-practices.}
 %package -n python3-%{pypi_name}
 Summary:        %{summary}
 
+# For Fedora 32/31, not needed for F33+
+%{?python_provide:%python_provide python3-%{pypi_name}}
+
 %description -n python3-%{pypi_name} %_description
 
 %prep

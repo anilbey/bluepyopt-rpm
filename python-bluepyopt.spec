@@ -1,13 +1,11 @@
 %global pypi_name bluepyopt
-%define version 1.9.48
-%define release 1
 
 BuildRequires:  python3dist(setuptools)
 
 Summary: Bluebrain Python Optimisation Library (bluepyopt)
 Name: python-%{pypi_name}
-Version: %{version}
-Release: %{release}%{?dist}
+Version: 1.9.48
+Release: 1%{?dist}
 Source0: https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 License: LGPLv3
 BuildRoot: %{_tmppath}/%{pypi_name}-%{version}-%{release}-buildroot

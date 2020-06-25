@@ -38,6 +38,11 @@ The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framewor
 %py3_install
 python3 setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
+%check
+%if %{with tests}
+%{__python3} setup.py test
+%endif
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 

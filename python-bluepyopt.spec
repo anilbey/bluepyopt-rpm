@@ -1,5 +1,7 @@
-# Tests enabled by default
-%bcond_without tests
+# Tests currently disabled
+# pebble is missing a build for rawhide:
+# https://bugzilla.redhat.com/show_bug.cgi?id=1851120
+%bcond_with tests
 
 %global pypi_name bluepyopt
 

@@ -18,8 +18,16 @@ BuildRequires:  python3dist(setuptools)
 Requires: python3-neuron
 Requires: python3dist(setuptools)
 
-%description
-The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framework for data-driven model parameter optimisation that wraps and standardises several existing open-source tools. It simplifies the task of creating and sharing these optimisations, and the associated techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks into various reusable and flexible discrete elements according to established best-practices.
+%global _description %{expand:
+The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible
+framework for data-driven model parameter optimisation that wraps and
+standardises several existing open-source tools. It simplifies the task of
+creating and sharing these optimisations, and the associated techniques and
+knowledge. This is achieved by abstracting the optimisation and evaluation
+tasks into various reusable and flexible discrete elements according to
+established best-practices.}
+
+%description %_description
 
 %prep
 %autosetup -n %{pypi_name}-%{version}

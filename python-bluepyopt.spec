@@ -6,7 +6,7 @@ Summary: Bluebrain Python Optimisation Library (bluepyopt)
 Name: python-%{pypi_name}
 Version: 1.9.48
 Release: 1%{?dist}
-Source0: https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0: %{pypi_source}
 License: LGPLv3
 BuildRoot: %{_tmppath}/%{pypi_name}-%{version}-%{release}-buildroot
 BuildArch: noarch

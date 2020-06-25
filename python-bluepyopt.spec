@@ -10,11 +10,8 @@ Version: %{version}
 Release: %{release}%{?dist}
 Source0: https://files.pythonhosted.org/packages/source/b/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 License: LGPLv3
-Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{pypi_name}-%{version}-%{release}-buildroot
-Prefix: %{_prefix}
 BuildArch: noarch
-Vendor: BlueBrain Project, EPFL <werner.vangeit@epfl.ch>
 Url: https://github.com/BlueBrain/BluePyOpt
 
 Requires: python3-neuron

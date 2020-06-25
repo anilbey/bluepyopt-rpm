@@ -1,6 +1,7 @@
 %global pypi_name bluepyopt
 
 BuildRequires:  python3dist(setuptools)
+BuildRequires:  python3-devel
 
 Summary: Bluebrain Python Optimisation Library (bluepyopt)
 Name: python-%{pypi_name}
@@ -28,12 +29,14 @@ Requires: python3dist(pebble) >= 4.3.10
 The Blue Brain Python Optimisation Library (BluePyOpt) is an extensible framework for data-driven model parameter optimisation that wraps and standardises several existing open-source tools. It simplifies the task of creating and sharing these optimisations, and the associated techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks into various reusable and flexible discrete elements according to established best-practices.
 
 %prep
-%setup -n %{pypi_name}-%{version} -n %{pypi_name}-%{version}
+%autosetup -n %{pypi_name}-%{version}
 
 %build
+%py3_build
 python3 setup.py build
 
 %install
+%py3_install
 python3 setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
 %clean

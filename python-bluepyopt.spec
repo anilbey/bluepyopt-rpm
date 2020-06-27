@@ -19,6 +19,11 @@ BuildArch: noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
 
+%if %{with tests}
+BuildRequires:  python3-neuron
+%endif
+
+
 # Only need to list ones not listed in setup.py
 Requires: python3-neuron
 Requires: python3dist(setuptools)

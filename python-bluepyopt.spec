@@ -36,6 +36,7 @@ BuildArch: noarch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
+# Required to compile neuron based models
 BuildRequires:  neuron-devel
 BuildRequires:  gcc-c++
 BuildRequires:  libX11-devel
